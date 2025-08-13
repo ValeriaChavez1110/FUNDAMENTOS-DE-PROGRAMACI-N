@@ -1,0 +1,20 @@
+#include <iostream> // Calculadora
+
+using namespace std;
+
+int main()
+{
+    int a, b, c, d, e, f;
+    cout << "Ingrese el primer numero: ";
+    cin >> a;
+    cout << "Ingrese  el segundo numero: ";
+    cin >> b;
+    c = a + b;
+    d = a - b;
+    e = a * b;
+    f = a / b;
+    cout << "la suma es: " << c; 
+    cout << "la resta es: " << d;
+    cout << "la multiplicacion es: " << e;
+    cout << "la division es: " << f;
+}
