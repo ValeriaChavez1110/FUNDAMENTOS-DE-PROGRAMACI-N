@@ -1,0 +1,14 @@
+#include <iostream>//AreaCirculo
+
+using namespace std;
+
+int main()
+{
+    float p = 3.141515, radio, Area;
+    cout << "Ingrese el valor del radio: ";
+    cin >> radio;
+    Area = p * radio * radio;
+    cout << "El valor del Area es: " << Area;
+    return 0;
+
+}
