@@ -1,0 +1,36 @@
+Algoritmo Menuareas
+	Area <- 0
+	p = 3.1416
+	Repetir
+		Escribir "AREAS"
+		Escribir "1.Area del triangulo"
+		Escribir "2.Area del cuadrado"
+		Escribir "3.Area de la circunferencia"
+		Escribir "0.Salir"
+		Escribir "Ingrese una opcion: "
+		Leer opcion
+		Segun opcion Hacer
+			1:
+				Escribir "Ingrese base: "
+				Leer b
+				Escribir "Ingrese altura: "
+				Leer a
+				Area <- (b*a)/2
+				Escribir "Area: ", Area
+			2:
+				Escribir "Ingrese lado: "
+				Leer b
+				Area <- b*b
+				Escribir "Area: ", Area
+			3:
+				Escribir "Ingrese radio: "
+				Leer r
+				Area <- p*(r*r)
+				Escribir "Area: ",Area
+			0:
+				Escribir "Salir"
+			De Otro Modo:
+				Escribir "Error"
+		FinSegun
+	Hasta Que opcion=0
+FinAlgoritmo
