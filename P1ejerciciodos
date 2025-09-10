@@ -1,0 +1,17 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int N;
+    cout << "Ingrese la nota final sobre 100: " << endl;
+    cin >> N;
+    if (N > 51 || N== 51) {
+        cout << "Aprobado" << endl;
+    }
+        else { 
+        cout << "Reprobado" << endl;
+    }
+    return 0;
+}
