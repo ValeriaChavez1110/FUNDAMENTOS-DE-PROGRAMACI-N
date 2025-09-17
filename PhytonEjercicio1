@@ -1,0 +1,7 @@
+print("Intercambio del valor A y B")
+A=int(input("Ingrese el valor de A: "))
+B=int(input("Ingrese el valor de B: "))
+C=A
+A=B
+B=C
+print("Después del intercambio: A= ",A,"B= ",C)
