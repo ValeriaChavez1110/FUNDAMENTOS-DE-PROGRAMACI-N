@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+  int a;
+  cout<<"Escriba un numero: ";
+  cin>>a;
+  if (a%2==0) 
+  {if (a>=0)
+  cout<<"Es par y positivo";
+  else 
+  cout<<"Es par y negativo";
+  }
+  else {
+      if(a>0)
+      cout<<"Es impar y positivo";
+      else
+      cout<<"Es impar y negativo";
+  }
+    return 0;
+}
