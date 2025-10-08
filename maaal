@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int N, suma=0, i=1, digito;
+    do {
+        cout<<"Ingrese la cantidad de numeros: ";
+        cin>> N;
+    } while (N<=0);
+    for (i<= N; i++); {
+        cout<<"Ingrese el numero: "<<endl;
+        
+        digito= N%10;
+        suma=suma+digito;
+        N=N/10;
+    }
+    cout<<"La suma de digitos es: "<<suma;
+
+    return 0;
+}
