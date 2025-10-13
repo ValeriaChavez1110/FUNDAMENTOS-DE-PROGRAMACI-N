@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int c, d;
+    float p, Subtotal, descuento;
+    do {
+        cout<<"Ingrese precio unitario: "; // 5
+        cin>>p;
+    } while (p<=0);
+    do {
+        cout<<"Ingrese la cantidad: "; // 2
+        cin>>c;
+    } while (c<=0);
+    do {
+        cout<<"Ingrese el porcentaje de descuento 0-99%: "; // 5
+        cin>>d;
+    } while ((d<0) || (d>100));
+    Subtotal= p*c; // 10 
+    if (d>0) {
+        descuento= (Subtotal * d) / 100; // 10x5 /100 = 5
+        Subtotal= Subtotal-descuento;
+        cout<<"Monto del descuento: "<<descuento<<endl;
+        cout<<"Monto total a pagar: "<<Subtotal<<endl;
+    } 
+    else 
+        cout<<"El monto tortal a pagar es: "<<Subtotal;
+    
+    return 0;
+}
