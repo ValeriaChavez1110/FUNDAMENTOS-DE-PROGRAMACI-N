@@ -1,0 +1,109 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void calcularFactorial();
+void calcularSumayPromedio();
+void tiendaMascotas();
+int main()
+{
+    int opcion;
+    do {
+        cout << "Menu" << endl;
+        cout << "1. Cálculo de factorial" << endl;
+        cout << "2. Cálculo suma y el promedio de -20 a 15" << endl;
+        cout << "3. Tienda de mascotas" << endl;
+        cout << "0. Salir" << endl;
+        cout << "Ingrese una opcion: " << endl;
+        cin >> opcion;
+        switch (opcion) {
+        case 1:
+            calcularFactorial();
+            break;
+        case 2:
+            calcularSumayPromedio();
+            break;
+        case 3:
+            tiendaMascotas();
+            break;
+        case 0:
+            cout << "Salir" << endl;
+            break;
+        default:
+            cout << "Error" << endl;
+            break;
+        }
+    } while (opcion != 0);
+    return 0;
+}
+void calcularFactorial()  {
+            int n;
+            double X, s = 0;
+            int fact = 1;
+            do {
+                cout << "Ingrese el valor de X: ";
+                cin >> X;
+                cout << "Ingrese el valor de n: ";
+                cin >> n;
+            } while ((X <= 0) || (n <= 0));
+
+            for (int i = 1; i <= n; i++) {
+                fact = fact * i;
+                if (i % 2 == 0)
+                    s = s - (pow(X, i) / fact);
+                if (i % 2 != 0)
+                    s = s + (pow(X, i) / fact);
+            }
+            cout << "La suma es de: " << s << endl;
+}
+void calcularSumayPromedio() {
+            int N = -20, suma = 0, cont = 0;
+            double promedio;
+            while (N <= 15) {
+                suma = suma + N;
+                cout << N << endl;
+                N = N + 1;
+                cont = cont + 1;
+            }
+            promedio = suma / cont;
+            cout << "La suma es igual a: " << suma << endl;
+            cout << "Promedio es igual a: " << promedio << endl;
+}
+void tiendaMascotas() {
+            int productos;
+            float peso, pesototal;
+            int opcion2;
+            int contador = 0;
+            do {
+                do {
+                    cout << "Ingrese el numero de productos: ";
+                    cin >> productos;
+                } while (productos <= 0);
+
+                pesototal = 0;
+                do {
+                    cout << "Ingrese el peso: ";
+                    cin >> peso;
+                } while (peso <= 0);
+
+                for (int i = 0; i <= productos; i++) {
+
+                    pesototal += peso;
+                }
+                cout << "El peso total es: " << pesototal << endl;
+                int n = contador % 5; // 1,2,3,4,0
+                if (n == 1)
+                    cout << "Tu mascota merece lo mejor, y nosotros te lo llevamos a casa" << endl;
+                else if (n == 2)
+                    cout << "Amor en cada entrega, felicidad en cada ladrido" << endl;
+                else if (n == 3)
+                    cout << "Productos que hacen ronronear de alegria" << endl;
+                else if (n == 4)
+                    cout << "Calidad, cariño y comodidad para tu mascota" << endl;
+                else
+                    cout << "Haz feliz a tu peludo sin salir de casa" << endl;
+                cout << "¿Desea realizar otro pedido? (1=Si / 0=No): " << endl;
+                cin >> opcion2;
+            } while (opcion2 == 1);
+            cout << "Gracias por su compra" << endl;
+}
