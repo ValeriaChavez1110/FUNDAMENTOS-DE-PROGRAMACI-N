@@ -1,0 +1,90 @@
+#include <iostream>
+#define MAX 100
+
+using namespace std;
+
+void cargar(int vector[], int n);
+void mostrar(int vector[], int n);
+float promedio(int vector[], int n);
+float menu(int vector[], int n);
+int eliminarDuplicados(int vector[], int n);
+
+int main()
+{
+	int tamano, vec[MAX];
+	do {
+		cout << "Ingrese el tamano del vector: ";
+		cin >> tamano;
+	} while ((tamano <= 0) || (tamano > MAX));
+	cargar(vec, tamano);
+	mostrar(vec, tamano);
+	cout << "El promedio es: " << promedio(vec, tamano)<<endl;
+	cout << "El monto total a pagar es: " << menu(vec, tamano)<<endl;
+	return 0;
+}
+void cargar(int vector[], int n) {
+	for (int i = 0; i < n; i++)
+	{
+		cout << "vec[" << i << "]= ";
+		cin >> vector[i];
+	}
+}
+void mostrar(int vector[], int n) {
+	for (int i = 0; i < n; i++)
+		cout << "vec[" << i << "]= " << vector[i] << endl;
+}
+float promedio(int vector[], int n) {
+	float suma = 0;
+	for (int i = 0; i < n; i++)
+		suma = suma + vector[i];
+	return suma / n;
+}
+float menu(int vector[], int n) { 
+
+	int opcion, cantidad;
+	float suma = 0, precio, ingreso;
+	do {
+		cout << "MENU" << endl;
+		cout << "1. Hamburguesa (3Bs)" << endl;
+		cout << "2. Hamburguesa con queso (5Bs)" << endl;
+		cout << "3. Papas fritas (2Bs)" << endl;
+		cout << "4. Soda (2.5Bs)" << endl;
+		cout << "0. Salir" << endl;
+		cout << "Ingrese una opcion: " << endl;
+		precio = 0;
+		cin >> opcion;
+		switch (opcion) {
+		case 1: precio = 3;
+			break;
+		case 2: precio = 5;
+			break;
+		case 3: precio = 2;
+			break;
+		case 4: precio = 2.5;
+			break;
+		case 0: cout << "salir" << endl;
+			break;
+		default:
+			cout << "Error" << endl;
+		}
+		if (precio > 0) {
+			cout << "Ingrese la cantidad: ";
+			cin >> cantidad;
+			ingreso = cantidad + precio;
+			suma = suma + ingreso;
+		}
+	} while (opcion != 0);//Do-while sale por falso
+	cout << "El monto total a pagar es: " << suma;
+	return suma;
+}
+int eliminarDuplicados(int vector[], int n) {
+	if (n == 0) return 0;
+	int k = 1;
+	for (int i = 1; i < n; i++) {
+		if (vector[i] != vector[k - 1]) {
+			vector[k] = vector[i];
+			k++;
+		}
+	}
+	return k;
+}
