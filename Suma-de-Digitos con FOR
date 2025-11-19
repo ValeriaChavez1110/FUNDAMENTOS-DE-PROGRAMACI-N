@@ -10,7 +10,7 @@ int main() {
     for (int i = 1; i <= cantidad; i++) {
         cout << "Ingrese el numero " << i << ": ";
         cin >> numero;
-        int temp = numero; // Copia para no perder el número original
+        int temp = numero;
         suma = 0;
         while (temp > 0) {
             digito = temp % 10;
