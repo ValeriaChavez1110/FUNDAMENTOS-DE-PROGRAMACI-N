@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int consumo, opcion;
+    float tarifa, subtotal, descuento, total;
+
+    do {
+        cout << "Ingrese el consumo en kWh: ";
+        cin >> consumo;
+        if (consumo >= 0 && consumo <= 100) {
+            tarifa = 1.20;
+            descuento = 0;
+        }
+        else if (consumo >= 101 && consumo <= 300) {
+            tarifa = 1.00;
+            descuento = 0.05;
+        }
+        else if (consumo >= 301 && consumo <= 600) {
+            tarifa = 0.90;
+            descuento = 0.10;
+        }
+        else if (consumo >= 601 && consumo <= 1000) {
+            tarifa = 0.85;
+            descuento = 0.15;
+        }
+        else {
+            tarifa = 0.80;
+            descuento = 0.20;
+        }
+        subtotal = consumo * tarifa;
+        total = subtotal - (subtotal * descuento);
+        cout << "Monto final a pagar: " << total<< endl;
+        cout << "\nDesea registrar otro consumo? (1=Si / 0=No): ";
+        cin >> opcion;
+
+    } while (opcion != 0);
+
+    return 0;
+}
