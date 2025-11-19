@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int hora;
+    int nuevas = 1;
+    int total = 1;
+
+    cout << "HORA\tNUEVAS BACTERIAS\tTOTAL" << endl;
+    cout << 0 << "\t" << nuevas << ".00\t\t\t" << total << ".00" << endl;
+    for (hora = 5; hora <= 60; hora += 5) {
+        nuevas = nuevas * 2;
+        total = nuevas;
+
+        cout << hora << "\t" << nuevas << ".00\t\t\t" << total << ".00" << endl;
+    }
+
+    cout << "El total acumulado en 60 horas es: " << total << ".00" << endl;
+
+    return 0;
+}
