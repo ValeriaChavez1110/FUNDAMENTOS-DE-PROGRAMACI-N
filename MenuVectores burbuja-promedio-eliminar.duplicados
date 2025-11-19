@@ -1,0 +1,121 @@
+#include <iostream>
+#include <stdlib.h>
+#include <string>
+#define MAX 100
+
+using namespace std;
+
+void cargar(int vec[], int n);
+void mostrar(int vec[], int n);
+float promedio(int vec[], int n);
+int eliminarDuplicados(int vec[], int n);
+void burbuja(int vec[], int m);
+
+int main()
+{
+    int v[MAX];
+    int opcion, tam;
+
+    do {
+        cout << "Ingrese el tamano del vector: ";
+        cin >> tam;
+    } while (tam <= 0 || tam > MAX);
+
+    do {
+        cout << "\n\t\t Menu \n";
+        cout << "\t\t =====\n";
+        cout << "1. Cargar" << endl;
+        cout << "2. Mostrar" << endl;
+        cout << "3. Ordenar" << endl;
+        cout << "4. Eliminar Duplicados" << endl;
+        cout << "5. Promedio" << endl;
+        cout << "0. Salir" << endl;
+        cout << "Ingrese una opcion: ";
+        cin >> opcion;
+
+        switch (opcion)
+        {
+        case 1:
+            cargar(v, tam);
+            break;
+
+        case 2:
+            mostrar(v, tam);
+            break;
+
+        case 3:
+            burbuja(v, tam);
+            break;
+
+        case 4:
+            tam = eliminarDuplicados(v, tam);
+            cout << "Duplicados eliminados." << endl;
+            mostrar(v, tam);
+            break;
+
+        case 5:
+            cout << "El promedio es: " << promedio(v, tam) << endl;
+            break;
+
+        case 0:
+            cout << "Salir" << endl;
+            break;
+
+        default:
+            cout << "ERROR" << endl;
+        }
+        system("pause");
+        system("cls");
+
+    } while (opcion != 0);
+    return 0;
+}
+void cargar(int vec[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << "Vector[ " << i << " ]= ";
+        cin >> vec[i];
+    }
+}
+void mostrar(int vec[], int n) {
+    for (int i = 0; i < n; i++)
+        cout << "Vector[ " << i << " ]= " << vec[i] << endl;
+}
+void burbuja(int vec[], int m) {
+    int temp;
+    for (int i = 0; i < m; i++) {
+        for (int j = i + 1; j < m; j++) {
+            if (vec[i] > vec[j]) { 
+                temp = vec[i];
+                vec[i] = vec[j];
+                vec[j] = temp;
+            }
+        }
+    }
+    cout << "Vector ordenado de menor a mayor: " << endl;
+    for (int i = 0; i < m; i++)
+        cout << vec[i] << " "<<endl;
+}
+float promedio(int vec[], int n) {
+    float suma = 0;
+    for (int i = 0; i < n; i++)
+        suma += vec[i];
+    return suma / n;
+}
+int eliminarDuplicados(int vector[], int n) {
+    int k = 0;
+    for (int i = 0; i < n; i++) {
+        bool repetido = false;
+
+        for (int j = 0; j < k; j++) {
+            if (vector[i] == vector[j]) {
+                repetido = true;
+                break;
+            }
+        }
+        if (!repetido) {
+            vector[k] = vector[i];
+            k++;
+        }
+    }
+    return k; 
+}
