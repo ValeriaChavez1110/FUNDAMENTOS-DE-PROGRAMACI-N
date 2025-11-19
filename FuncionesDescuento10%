@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+void montoCompra(float& n);
+void descuento(float& n);
+void modificador(float& n);
+
+int main()
+{
+	float totalcompra;
+	montoCompra(totalcompra);
+	descuento(totalcompra);
+	modificador(totalcompra);
+}
+void montoCompra(float& n){
+	cout << "Ingrese total de compra: ";
+	cin >> n;
+}
+void descuento(float& n) {
+	n = n - (n * 0.10);
+}
+void modificador(float& n) {
+	cout << "El monto total es: " << n << endl;
+}
