@@ -1,0 +1,69 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int opcion;
+
+    do {
+        cout << "MENU" << endl;
+        cout << "1. Calcular sueldo final" << endl;
+        cout << "2. Verificar si la nota es aprobada o reprobada" << endl;
+        cout << "3. Determinar si un numero es par/impar y positivo/negativo" << endl;
+        cout << "0. Salir" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1: {
+                float a, b, c, SF;
+                cout << "Ingrese el sueldo basico: ";
+                cin >> a;
+                cout << "Ingrese el bono de transporte: ";
+                cin >> b;
+                cout << "Ingrese la bonificacion por antiguedad: ";
+                cin >> c;
+                SF = a + b + c;
+                cout << "Sueldo final: " << SF << endl;
+                break;
+            }
+            case 2: {
+                int N;
+                cout << "Ingrese la nota final sobre 100: ";
+                cin >> N;
+                if (N >= 51) {
+                    cout << "Aprobado\n";
+                }
+                else {
+                    cout << "Reprobado\n";
+                }
+                break;
+            }
+            case 3: {
+                int a;
+                cout << "Escriba un numero: ";
+                cin >> a;
+                if (a % 2 == 0) {
+                    if (a >= 0)
+                        cout << "Es par y positivo\n";
+                    else
+                        cout << "Es par y negativo\n";
+                }
+                else {
+                    if (a >= 0)
+                        cout << "Es impar y positivo\n";
+                    else
+                        cout << "Es impar y negativo\n";
+                }
+                break;
+            }
+            case 0:
+                cout << "Salir"<< endl;
+                break;
+            default:
+                cout << "ERROR" << endl;
+            }
+
+    } while (opcion != 0);
+
+    return 0;
+}
